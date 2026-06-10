@@ -1,0 +1,123 @@
+﻿<UserControl x:Class="Gestion_CyberCafe.Views.Poste.GestionPosteView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="#F5F7FA">
+
+    <Grid Margin="15">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- ================= LEFT : FORM ================= -->
+        <Border Grid.Column="0"
+                Background="White"
+                CornerRadius="10"
+                Padding="15"
+                BorderBrush="#E5E7EB"
+                BorderThickness="1"
+                Margin="0,0,10,0">
+
+            <StackPanel>
+
+                <TextBlock Text="Gestion des Postes"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           Margin="0,0,0,15"
+                           Foreground="#1E293B"/>
+
+                <!-- NOM POSTE -->
+                <TextBlock Text="Nom Poste" Foreground="Gray"/>
+                <TextBox x:Name="txtNomPoste"
+                         Height="35"
+                         Margin="0,5,0,10"/>
+
+                <!-- DESCRIPTION -->
+                <TextBlock Text="Description" Foreground="Gray"/>
+                <TextBox x:Name="txtDescription"
+                         Height="35"
+                         Margin="0,5,0,10"/>
+
+                <!-- STATUT -->
+                <TextBlock Text="Statut" Foreground="Gray"/>
+
+                <ComboBox x:Name="cbStatut"
+                          Height="35"
+                          Margin="0,5,0,15">
+
+                    <ComboBoxItem Content="LIBRE"/>
+                    <ComboBoxItem Content="OCCUPE"/>
+                    <ComboBoxItem Content="MAINTENANCE"/>
+
+                </ComboBox>
+
+                <!-- BUTTONS -->
+                <Button Content="➕ Ajouter"
+                        Height="35"
+                        Background="#16A34A"
+                        Foreground="White"
+                        BorderThickness="0"
+                        Margin="0,0,0,5"
+                        Click="BtnAjouter_Click"/>
+
+                <Button Content="✏ Modifier"
+                        Height="35"
+                        Background="#2563EB"
+                        Foreground="White"
+                        BorderThickness="0"
+                        Margin="0,0,0,5"
+                        Click="BtnModifier_Click"/>
+
+                <Button Content="🗑 Supprimer"
+                        Height="35"
+                        Background="#DC2626"
+                        Foreground="White"
+                        BorderThickness="0"
+                        Click="BtnSupprimer_Click"/>
+
+            </StackPanel>
+
+        </Border>
+
+        <!-- ================= RIGHT : LISTE ================= -->
+        <Border Grid.Column="1"
+                Background="White"
+                CornerRadius="10"
+                Padding="10"
+                BorderBrush="#E5E7EB"
+                BorderThickness="1">
+
+            <DataGrid x:Name="dgPostes"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      SelectionMode="Single"
+                      SelectionChanged="dgPostes_SelectionChanged">
+
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn Header="ID"
+                                        Binding="{Binding IdPoste}"
+                                        Width="60"/>
+
+                    <DataGridTextColumn Header="Nom"
+                                        Binding="{Binding NomPoste}"
+                                        Width="*"/>
+
+                    <DataGridTextColumn Header="Description"
+                                        Binding="{Binding Description}"
+                                        Width="2*"/>
+
+                    <DataGridTextColumn Header="Statut"
+                                        Binding="{Binding Statut}"
+                                        Width="120"/>
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+
+        </Border>
+
+    </Grid>
+
+</UserControl>

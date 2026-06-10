@@ -1,0 +1,157 @@
+﻿<UserControl x:Class="Gestion_CyberCafe.Views.Wifi.Pages.WifiActiveView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="#F5F7FA">
+
+    <Grid Margin="15">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- ================= TITLE ================= -->
+        <TextBlock Text="🟢 Connexions WiFi Actives"
+                   FontSize="22"
+                   FontWeight="Bold"
+                   Foreground="#1E293B"
+                   Margin="0,0,0,10"/>
+
+        <!-- ================= STATS ================= -->
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal"
+                    Margin="0,0,0,15">
+
+            <!-- ACTIVE COUNT -->
+            <Border Background="White"
+                    CornerRadius="10"
+                    Padding="12"
+                    Margin="0,0,10,0"
+                    Width="160">
+
+                <StackPanel>
+                    <TextBlock Text="Connexions actives"
+                               Foreground="Gray"/>
+                    <TextBlock x:Name="txtActiveCount"
+                               Text="0"
+                               FontSize="22"
+                               FontWeight="Bold"
+                               Foreground="#16A34A"/>
+                </StackPanel>
+
+            </Border>
+
+            <!-- TOTAL MONEY -->
+            <Border Background="White"
+                    CornerRadius="10"
+                    Padding="12"
+                    Width="180">
+
+                <StackPanel>
+                    <TextBlock Text="Montant total"
+                               Foreground="Gray"/>
+                    <TextBlock x:Name="txtTotalMontant"
+                               Text="0 Ar"
+                               FontSize="22"
+                               FontWeight="Bold"
+                               Foreground="#F59E0B"/>
+                </StackPanel>
+
+            </Border>
+
+        </StackPanel>
+
+        <!-- ================= TABLE ================= -->
+        <Border Grid.Row="2"
+                Background="White"
+                CornerRadius="12"
+                Padding="10"
+                BorderBrush="#E5E7EB"
+                BorderThickness="1">
+
+            <DataGrid x:Name="dgActive"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      CanUserAddRows="False"
+                      HeadersVisibility="Column"
+                      GridLinesVisibility="None">
+
+                <DataGrid.Columns>
+
+                    <!-- CLIENT -->
+                    <DataGridTextColumn Header="Client"
+                                        Binding="{Binding NomClient}"
+                                        Width="*"/>
+
+                    <!-- APPAREIL -->
+                    <DataGridTextColumn Header="Appareil"
+                                        Binding="{Binding MarqueAppareil}"
+                                        Width="*"/>
+
+                    <!-- DEBUT -->
+                    <DataGridTextColumn Header="Début"
+                                        Binding="{Binding HeureDebut}"
+                                        Width="120"/>
+
+                    <!-- TEMPS RESTANT -->
+                    <DataGridTextColumn Header="Temps restant"
+                                        Binding="{Binding TempsRestant}"
+                                        Width="140"/>
+
+                    <!-- MONTANT -->
+                    <DataGridTextColumn Header="Montant"
+                                        Binding="{Binding MontantTotal}"
+                                        Width="120"/>
+
+                    <!-- STATUT -->
+                    <DataGridTextColumn Header="Statut"
+                                        Binding="{Binding Statut}"
+                                        Width="100"/>
+
+                    <!-- ACTIONS -->
+                    <DataGridTemplateColumn Header="Actions"
+                                            Width="180">
+
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+
+                                <StackPanel Orientation="Horizontal">
+
+                                    <!-- TERMINER -->
+                                    <Button Content="⏹"
+                                            Width="35"
+                                            Height="30"
+                                            Background="#DC2626"
+                                            Foreground="White"
+                                            BorderThickness="0"
+                                            Margin="0,0,5,0"
+                                            Cursor="Hand"
+                                            Click="BtnTerminate_Click"/>
+
+                                    <!-- PROLONGER -->
+                                    <Button Content="➕"
+                                            Width="35"
+                                            Height="30"
+                                            Background="#2563EB"
+                                            Foreground="White"
+                                            BorderThickness="0"
+                                            Cursor="Hand"
+                                            Click="BtnExtend_Click"/>
+
+                                </StackPanel>
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+
+        </Border>
+
+    </Grid>
+
+</UserControl>

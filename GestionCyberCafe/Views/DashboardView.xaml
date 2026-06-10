@@ -1,0 +1,239 @@
+﻿<UserControl x:Class="Gestion_CyberCafe.Views.DashboardView"
+          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          Background="#F5F7FA" Width="1181" Height="628">
+
+    
+    <Grid Margin="15">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- TITLE -->
+        <TextBlock Text="📊 TABLEAU DE BORD"
+               FontSize="28"
+               FontWeight="Bold"
+               Foreground="#1E293B"
+               Margin="5"/>
+
+        <!-- ================= ROW 1 ================= -->
+        <Grid Grid.Row="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Sessions Poste -->
+            <Border Grid.Column="0"
+                Background="White"
+                CornerRadius="15"
+                Margin="5"
+                Padding="15">
+
+                <StackPanel>
+                    <TextBlock Text="🖥 Sessions Poste"
+                           Foreground="Gray"/>
+
+                    <TextBlock x:Name="txtSessionsPoste"
+                           Text="0"
+                           FontSize="32"
+                           FontWeight="Bold"
+                           Foreground="#2563EB"/>
+                </StackPanel>
+
+            </Border>
+
+            <!-- Sessions Wifi -->
+            <Border Grid.Column="1"
+                Background="White"
+                CornerRadius="15"
+                Margin="5"
+                Padding="15">
+
+                <StackPanel>
+                    <TextBlock Text="📶 Sessions Wifi"
+                           Foreground="Gray"/>
+
+                    <TextBlock x:Name="txtSessionsWifi"
+                           Text="0"
+                           FontSize="32"
+                           FontWeight="Bold"
+                           Foreground="#10B981"/>
+                </StackPanel>
+
+            </Border>
+
+            <!-- Clients -->
+            <Border Grid.Column="2"
+                Background="White"
+                CornerRadius="15"
+                Margin="5"
+                Padding="15">
+
+                <StackPanel>
+                    <TextBlock Text="👤 Clients"
+                           Foreground="Gray"/>
+
+                    <TextBlock x:Name="txtClients"
+                           Text="0"
+                           FontSize="32"
+                           FontWeight="Bold"
+                           Foreground="#F59E0B"/>
+                </StackPanel>
+
+            </Border>
+
+            <!-- Abonnements Actifs -->
+            <Border Grid.Column="3"
+                Background="White"
+                CornerRadius="15"
+                Margin="5"
+                Padding="15">
+
+                <StackPanel>
+                    <TextBlock Text="📅 Abonnements Actifs"
+                           Foreground="Gray"/>
+
+                    <TextBlock x:Name="txtAbonnementsActifs"
+                           Text="0"
+                           FontSize="32"
+                           FontWeight="Bold"
+                           Foreground="#8B5CF6"/>
+                </StackPanel>
+
+            </Border>
+
+        </Grid>
+
+        <!-- ================= ROW 2 ================= -->
+        <Grid Grid.Row="2">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Suspendus -->
+            <Border Grid.Column="0"
+                Background="White"
+                CornerRadius="15"
+                Margin="5"
+                Padding="15">
+
+                <StackPanel>
+                    <TextBlock Text="⛔ Suspendus"
+                           Foreground="Gray"/>
+
+                    <TextBlock x:Name="txtSuspendus"
+                           Text="0"
+                           FontSize="32"
+                           FontWeight="Bold"
+                           Foreground="#EF4444"/>
+                </StackPanel>
+
+            </Border>
+
+            <!-- Expirés -->
+            <Border Grid.Column="1"
+                Background="White"
+                CornerRadius="15"
+                Margin="5"
+                Padding="15">
+
+                <StackPanel>
+                    <TextBlock Text="⏰ Expirés"
+                           Foreground="Gray"/>
+
+                    <TextBlock x:Name="txtExpires"
+                           Text="0"
+                           FontSize="32"
+                           FontWeight="Bold"
+                           Foreground="#DC2626"/>
+                </StackPanel>
+
+            </Border>
+
+            <!-- Postes Libres -->
+            <Border Grid.Column="2"
+                Background="White"
+                CornerRadius="15"
+                Margin="5"
+                Padding="15">
+
+                <StackPanel>
+                    <TextBlock Text="🖥 Postes Libres"
+                           Foreground="Gray"/>
+
+                    <TextBlock x:Name="txtPostes"
+                           Text="0"
+                           FontSize="32"
+                           FontWeight="Bold"
+                           Foreground="#0EA5E9"/>
+                </StackPanel>
+
+            </Border>
+
+            <!-- Total Abonnements -->
+            <Border Grid.Column="3"
+                Background="White"
+                CornerRadius="15"
+                Margin="5"
+                Padding="15">
+
+                <StackPanel>
+                    <TextBlock Text="📚 Total Abonnements"
+                           Foreground="Gray"/>
+
+                    <TextBlock x:Name="txtTotalAbonnements"
+                           Text="0"
+                           FontSize="32"
+                           FontWeight="Bold"
+                           Foreground="#0891B2"/>
+                </StackPanel>
+
+            </Border>
+
+        </Grid>
+
+        <!-- ================= HISTORIQUE ================= -->
+        <Border Grid.Row="3"
+            Background="White"
+            CornerRadius="15"
+            Margin="5"
+            Padding="10">
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="📋 Historique récent des abonnements"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Margin="5"/>
+
+                <DataGrid x:Name="dgHistorique"
+                      Grid.Row="1"
+                      Margin="0,10,0,0"
+                      AutoGenerateColumns="True"
+                      IsReadOnly="True"/>
+
+            </Grid>
+
+        </Border>
+
+    </Grid>
+ 
+
+</UserControl>

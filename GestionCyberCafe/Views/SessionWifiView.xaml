@@ -1,0 +1,119 @@
+﻿<UserControl x:Class="Gestion_CyberCafe.Views.Wifi.SessionWifiView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="#F9FAFB">
+
+    <!-- ================= STYLES ================= -->
+    <UserControl.Resources>
+
+        <!-- TAB BUTTON STYLE -->
+        <Style x:Key="TabButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#6B7280"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Padding" Value="12"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="bd"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="8"
+                                Padding="10">
+
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bd"
+                                        Property="Background"
+                                        Value="#E5E7EB"/>
+                                <Setter Property="Foreground" Value="#111827"/>
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="bd"
+                                        Property="Background"
+                                        Value="#D1D5DB"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
+
+    <!-- ================= MAIN GRID ================= -->
+    <Grid Margin="20">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- ================= TITLE ================= -->
+        <TextBlock Text="Gestion Session WiFi"
+                   FontSize="24"
+                   FontWeight="SemiBold"
+                   Foreground="#111827"
+                   Margin="0,0,0,15"/>
+
+        <!-- ================= TAB NAVIGATION FULL WIDTH ================= -->
+        <Border Grid.Row="1"
+                Background="White"
+                CornerRadius="10"
+                BorderBrush="#E5E7EB"
+                BorderThickness="1"
+                Margin="0,0,0,15">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Content="Connexion"
+                        Grid.Column="0"
+                        Click="BtnClient_Click"
+                        Style="{StaticResource TabButtonStyle}"/>
+
+                <Button Content="Actives"
+                        Grid.Column="1"
+                        Click="BtnActive_Click"
+                        Style="{StaticResource TabButtonStyle}"/>
+
+                <Button Content="Historique"
+                        Grid.Column="2"
+                        Click="BtnHistory_Click"
+                        Style="{StaticResource TabButtonStyle}"/>
+
+            </Grid>
+
+        </Border>
+
+        <!-- ================= CONTENT ================= -->
+        <Border Grid.Row="2"
+                Background="White"
+                CornerRadius="10"
+                Padding="15"
+                BorderBrush="#E5E7EB"
+                BorderThickness="1">
+
+            <ContentControl x:Name="WifiContent"/>
+
+        </Border>
+
+    </Grid>
+
+</UserControl>

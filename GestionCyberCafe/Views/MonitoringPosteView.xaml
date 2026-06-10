@@ -1,0 +1,197 @@
+﻿<UserControl x:Class="Gestion_CyberCafe.Views.Poste.MonitoringPosteView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="#F5F7FA">
+
+    <Grid Margin="15">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- ================= TITLE ================= -->
+        <TextBlock Text="📊 MONITORING CYBERCAFÉ"
+                   FontSize="22"
+                   FontWeight="Bold"
+                   Foreground="#1E293B"
+                   Margin="0,0,0,15"/>
+
+        <!-- ================= STATISTICS PRO ================= -->
+        <UniformGrid Grid.Row="1" Columns="4" Margin="0,0,0,15">
+
+            <!-- LIBRES -->
+            <Border Background="White"
+            CornerRadius="12"
+            Margin="8"
+            Padding="15"
+            BorderBrush="#E5E7EB"
+            BorderThickness="1">
+                
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Setter Property="Background" Value="White"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#F3F4F6"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+
+                <StackPanel>
+                    <TextBlock Text="🟢 Libres"
+                       Foreground="Gray"
+                       FontSize="14"/>
+
+                    <TextBlock x:Name="txtLibres"
+                       Text="0"
+                       FontSize="26"
+                       FontWeight="Bold"
+                       Foreground="#16A34A"/>
+                </StackPanel>
+
+            </Border>
+
+            <!-- OCCUPES -->
+            <Border Background="White"
+            CornerRadius="12"
+            Margin="8"
+            Padding="15"
+            BorderBrush="#E5E7EB"
+            BorderThickness="1">
+
+                <StackPanel>
+                    <TextBlock Text="🔴 Occupés"
+                       Foreground="Gray"
+                       FontSize="14"/>
+
+                    <TextBlock x:Name="txtOccupes"
+                       Text="0"
+                       FontSize="26"
+                       FontWeight="Bold"
+                       Foreground="#DC2626"/>
+                </StackPanel>
+
+            </Border>
+
+            <!-- MAINTENANCE -->
+            <Border Background="White"
+            CornerRadius="12"
+            Margin="8"
+            Padding="15"
+            BorderBrush="#E5E7EB"
+            BorderThickness="1">
+
+                <StackPanel>
+                    <TextBlock Text="🟡 Maintenance"
+                       Foreground="Gray"
+                       FontSize="14"/>
+
+                    <TextBlock x:Name="txtMaintenance"
+                       Text="0"
+                       FontSize="26"
+                       FontWeight="Bold"
+                       Foreground="#F59E0B"/>
+                </StackPanel>
+
+            </Border>
+
+            <!-- CLIENTS ACTIFS -->
+            <Border Background="White"
+            CornerRadius="12"
+            Margin="8"
+            Padding="15"
+            BorderBrush="#E5E7EB"
+            BorderThickness="1">
+
+                <StackPanel>
+                    <TextBlock Text="🔵 Clients actifs"
+                       Foreground="Gray"
+                       FontSize="14"/>
+
+                    <TextBlock x:Name="txtClientsActifs"
+                       Text="0"
+                       FontSize="26"
+                       FontWeight="Bold"
+                       Foreground="#2563EB"/>
+                </StackPanel>
+
+            </Border>
+            
+
+        </UniformGrid>
+        
+
+        <!-- ================= MAIN GRID ================= -->
+        <DataGrid x:Name="dgMonitoring"
+                  Grid.Row="2"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  CanUserAddRows="False"
+                  HeadersVisibility="Column"
+                  Margin="0,10,0,0">
+
+            <DataGrid.Columns>
+
+                <!-- Poste -->
+                <DataGridTextColumn Header="Poste" Binding="{Binding NomPoste}" Width="100"/>
+
+                <!-- Client -->
+                <DataGridTextColumn Header="Client" Binding="{Binding NomClient}" Width="120"/>
+
+                <!-- Téléphone -->
+                <DataGridTextColumn Header="Téléphone" Binding="{Binding Telephone}" Width="120"/>
+
+                <!-- Début -->
+                <DataGridTextColumn Header="Début" Binding="{Binding HeureDebut}" Width="90"/>
+
+                <!-- Fin -->
+                <DataGridTextColumn Header="Fin prévue" Binding="{Binding HeureFin}" Width="90"/>
+
+                <!-- Durée -->
+                <DataGridTextColumn Header="Durée (min)" Binding="{Binding DureeMinutes}" Width="90"/>
+
+                <!-- Montant -->
+                <DataGridTextColumn Header="Montant" Binding="{Binding MontantTotal}" Width="110"/>
+
+                <!-- Statut session -->
+                <DataGridTextColumn Header="Session" Binding="{Binding Statut}" Width="100"/>
+
+                <!-- Statut poste -->
+                <DataGridTextColumn Header="Poste Statut" Binding="{Binding StatutPoste}" Width="110"/>
+
+                <!-- ACTIONS -->
+                <DataGridTemplateColumn Header="Actions" Width="180">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+
+                            <StackPanel Orientation="Horizontal">
+
+                                
+                                <Button Content="Maintenance"
+                                        Tag="{Binding NomPoste}"
+                                        Click="BtnMaintenance_Click"/>
+
+                                <Button Content="Libre"
+                                        Tag="{Binding NomPoste}"
+                                        Click="BtnLibre_Click"/>
+
+                                <Button Content="Terminer"
+                                        Tag="{Binding NomPoste}"
+                                        Click="BtnTerminer_Click"/>
+
+                            </StackPanel>
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+    </Grid>
+
+</UserControl>

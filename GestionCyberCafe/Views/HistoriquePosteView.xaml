@@ -1,0 +1,187 @@
+﻿<UserControl x:Class="Gestion_CyberCafe.Views.Poste.HistoriquePosteView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="#F5F7FA">
+
+    <Grid Margin="15">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- ================= FILTRE ================= -->
+        <Border Grid.Row="0"
+                Background="White"
+                CornerRadius="12"
+                Padding="15"
+                Margin="0,0,0,10"
+                BorderBrush="#E5E7EB"
+                BorderThickness="1">
+
+            <StackPanel>
+
+                <!-- TITRE -->
+                <TextBlock Text="📜 Historique des Sessions Poste"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           Foreground="#1E293B"
+                           Margin="0,0,0,15"/>
+
+                <WrapPanel VerticalAlignment="Center">
+
+                    <!-- RECHERCHE -->
+                    <StackPanel Margin="0,0,10,10">
+
+                        <TextBlock Text="Recherche"
+                                   Foreground="Gray"
+                                   Margin="0,0,0,3"/>
+
+                        <TextBox x:Name="txtSearch"
+                                 Width="280"
+                                 Height="35"
+                                 Padding="8"
+                                 ToolTip="Rechercher client, poste, statut ou montant"/>
+
+                    </StackPanel>
+
+                    <!-- DATE DEBUT -->
+                    <StackPanel Margin="0,0,10,10">
+
+                        <TextBlock Text="Date début"
+                                   Foreground="Gray"
+                                   Margin="0,0,0,3"/>
+
+                        <DatePicker x:Name="dpDebut"
+                                    Width="150"/>
+
+                    </StackPanel>
+
+                    <!-- DATE FIN -->
+                    <StackPanel Margin="0,0,10,10">
+
+                        <TextBlock Text="Date fin"
+                                   Foreground="Gray"
+                                   Margin="0,0,0,3"/>
+
+                        <DatePicker x:Name="dpFin"
+                                    Width="150"/>
+
+                    </StackPanel>
+
+                    <!-- RECHERCHE -->
+                    <Button Content="🔍 Rechercher"
+                            Width="120"
+                            Height="35"
+                            Margin="0,20,10,0"
+                            Background="#2563EB"
+                            Foreground="White"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            Click="BtnRechercher_Click"/>
+
+                    <!-- RESET -->
+                    <Button Content="🔄 Reset"
+                            Width="100"
+                            Height="35"
+                            Margin="0,20,10,0"
+                            Background="#6B7280"
+                            Foreground="White"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            Click="BtnReset_Click"/>
+
+                    <!-- SUPPRIMER TOUT -->
+                    <Button Content="🗑 Supprimer tout"
+                            Width="140"
+                            Height="35"
+                            Margin="0,20,0,0"
+                            Background="#DC2626"
+                            Foreground="White"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            Click="BtnSupprimerTous_Click"/>
+
+                </WrapPanel>
+
+            </StackPanel>
+
+        </Border>
+
+        <!-- ================= TABLEAU ================= -->
+        <Border Grid.Row="1"
+                Background="White"
+                CornerRadius="12"
+                Padding="5"
+                BorderBrush="#E5E7EB"
+                BorderThickness="1">
+
+            <DataGrid x:Name="dgHistorique"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      CanUserAddRows="False"
+                      HeadersVisibility="Column"
+                      GridLinesVisibility="Horizontal"
+                      RowHeight="35"
+                      Background="White">
+
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn Header="Client"
+                                        Binding="{Binding NomClient}"
+                                        Width="*"/>
+
+                    <DataGridTextColumn Header="Poste"
+                                        Binding="{Binding NomPoste}"
+                                        Width="120"/>
+
+                    <DataGridTextColumn Header="Début"
+                                        Binding="{Binding HeureDebut}"
+                                        Width="150"/>
+
+                    <DataGridTextColumn Header="Fin"
+                                        Binding="{Binding HeureFin}"
+                                        Width="150"/>
+
+                    <DataGridTextColumn Header="Durée (min)"
+                                        Binding="{Binding DureeMinutes}"
+                                        Width="110"/>
+
+                    <DataGridTextColumn Header="Montant"
+                                        Binding="{Binding MontantTotal}"
+                                        Width="120"/>
+
+                    <DataGridTextColumn Header="Statut"
+                                        Binding="{Binding Statut}"
+                                        Width="120"/>
+
+                    <!-- ACTION -->
+                    <DataGridTemplateColumn Header="Action"
+                                            Width="90">
+
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+
+                                <Button Content="🗑"
+                                        Width="35"
+                                        Height="30"
+                                        Background="#DC2626"
+                                        Foreground="White"
+                                        BorderThickness="0"
+                                        Cursor="Hand"
+                                        Click="BtnDelete_Click"/>
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+
+        </Border>
+
+    </Grid>
+
+</UserControl>

@@ -1,0 +1,142 @@
+﻿<Window x:Class="GestionCyberCafe.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Cyber Café"
+        Height="700"
+        Width="1200"
+        WindowStartupLocation="CenterScreen"
+        Background="#F3F4F6">
+
+    <!-- ================= STYLES ================= -->
+    <Window.Resources>
+
+        <!-- MENU BUTTON STYLE (LIGHT) -->
+        <Style x:Key="MenuButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#374151"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Height" Value="45"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="8"
+                                Padding="10">
+
+                            <ContentPresenter VerticalAlignment="Center"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border"
+                                        Property="Background"
+                                        Value="#E5E7EB"/>
+                                <Setter Property="Foreground"
+                                        Value="#111827"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- LOGOUT BUTTON -->
+        <Style x:Key="LogoutButtonStyle" TargetType="Button"
+               BasedOn="{StaticResource MenuButtonStyle}">
+            <Setter Property="Foreground" Value="#DC2626"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FEE2E2"/>
+                    <Setter Property="Foreground" Value="#B91C1C"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+    </Window.Resources>
+
+    <!-- ================= LAYOUT ================= -->
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- ================= SIDEBAR ================= -->
+        <Border Grid.Column="0"
+        Background="#FFFFFF"
+        BorderBrush="#E5E7EB"
+        BorderThickness="0,0,1,0"
+        Padding="10">
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- ================= TITLE ================= -->
+                <TextBlock Text="CYBER CAFÉ"
+                   Foreground="#111827"
+                   FontSize="18"
+                   FontWeight="Bold"
+                   Margin="10,10,10,20"/>
+
+                <!-- ================= MENU ================= -->
+                <StackPanel Grid.Row="1">
+
+                    <Button Content="🏠 Dashboard"
+                    Click="BtnDashboard_Click"
+                    Style="{StaticResource MenuButtonStyle}"/>
+
+                    <Button Content="🖥 Sessions Poste"
+                    Click="BtnPoste_Click"
+                    Style="{StaticResource MenuButtonStyle}"/>
+
+                    <Button Content="📶 Sessions Wifi"
+                    Click="BtnWifi_Click"
+                    Style="{StaticResource MenuButtonStyle}"/>
+
+                    <Button Content="📅 Abonnements"
+                    Click="BtnAbonnement_Click"
+                    Style="{StaticResource MenuButtonStyle}"/>
+
+                    <Button Content="⚙ Parametre"
+                    Click="BtnParametre_Click"
+                    Style="{StaticResource MenuButtonStyle}"/>
+
+                </StackPanel>
+
+                <!-- ================= LOGOUT BOTTOM ================= -->
+                <Button Grid.Row="2"
+                Content="🚪 Déconnexion"
+                Click="BtnLogout_Click"
+                Style="{StaticResource LogoutButtonStyle}"
+                Margin="5"
+                VerticalAlignment="Bottom"/>
+
+            </Grid>
+
+        </Border>
+        <!-- ================= CONTENT ================= -->
+        <Grid Grid.Column="1"
+              Background="#F3F4F6">
+
+            <ContentControl x:Name="MainContent"
+                            Margin="15"/>
+
+        </Grid>
+
+    </Grid>
+
+</Window>

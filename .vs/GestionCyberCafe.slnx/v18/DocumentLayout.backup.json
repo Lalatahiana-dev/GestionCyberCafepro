@@ -1,0 +1,251 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\GestionCyberCafe\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|d:\\gestioncybercafe\\gestioncybercafe\\views\\parametregeneralview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|solutionrelative:gestioncybercafe\\views\\parametregeneralview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|D:\\GestionCyberCafe\\gestioncybercafe\\views\\parametreuserview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|solutionrelative:gestioncybercafe\\views\\parametreuserview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|D:\\GestionCyberCafe\\gestioncybercafe\\views\\parametreposteview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|solutionrelative:gestioncybercafe\\views\\parametreposteview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|D:\\GestionCyberCafe\\gestioncybercafe\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|solutionrelative:gestioncybercafe\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|D:\\GestionCyberCafe\\gestioncybercafe\\views\\abonnementinternetview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|solutionrelative:gestioncybercafe\\views\\abonnementinternetview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|D:\\GestionCyberCafe\\gestioncybercafe\\views\\abonnementactiveview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|solutionrelative:gestioncybercafe\\views\\abonnementactiveview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|D:\\GestionCyberCafe\\gestioncybercafe\\views\\parametreview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|solutionrelative:gestioncybercafe\\views\\parametreview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|D:\\GestionCyberCafe\\gestioncybercafe\\views\\parametretarifview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|solutionrelative:gestioncybercafe\\views\\parametretarifview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|D:\\GestionCyberCafe\\gestioncybercafe\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|solutionrelative:gestioncybercafe\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|D:\\GestionCyberCafe\\gestioncybercafe\\views\\parametreposteview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|solutionrelative:gestioncybercafe\\views\\parametreposteview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|D:\\GestionCyberCafe\\gestioncybercafe\\views\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|solutionrelative:gestioncybercafe\\views\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|D:\\GestionCyberCafe\\gestioncybercafe\\modelsr\\poste.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|solutionrelative:gestioncybercafe\\modelsr\\poste.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|D:\\GestionCyberCafe\\gestioncybercafe\\views\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|solutionrelative:gestioncybercafe\\views\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|D:\\GestionCyberCafe\\gestioncybercafe\\views\\dashboardview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|solutionrelative:gestioncybercafe\\views\\dashboardview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|D:\\GestionCyberCafe\\gestioncybercafe\\views\\dashboardview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|solutionrelative:gestioncybercafe\\views\\dashboardview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ParametreGeneralView.xaml",
+              "DocumentMoniker": "D:\\GestionCyberCafe\\GestionCyberCafe\\Views\\ParametreGeneralView.xaml",
+              "RelativeDocumentMoniker": "GestionCyberCafe\\Views\\ParametreGeneralView.xaml",
+              "ToolTip": "D:\\GestionCyberCafe\\GestionCyberCafe\\Views\\ParametreGeneralView.xaml",
+              "RelativeToolTip": "GestionCyberCafe\\Views\\ParametreGeneralView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-09T18:06:23.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ParametreUserView.xaml",
+              "DocumentMoniker": "D:\\GestionCyberCafe\\GestionCyberCafe\\Views\\ParametreUserView.xaml",
+              "RelativeDocumentMoniker": "GestionCyberCafe\\Views\\ParametreUserView.xaml",
+              "ToolTip": "D:\\GestionCyberCafe\\GestionCyberCafe\\Views\\ParametreUserView.xaml",
+              "RelativeToolTip": "GestionCyberCafe\\Views\\ParametreUserView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-09T18:03:59.131Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\GestionCyberCafe\\GestionCyberCafe\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "GestionCyberCafe\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\GestionCyberCafe\\GestionCyberCafe\\MainWindow.xaml.cs",
+              "RelativeToolTip": "GestionCyberCafe\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-31T15:25:10.199Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ParametrePosteView.xaml",
+              "DocumentMoniker": "D:\\GestionCyberCafe\\GestionCyberCafe\\Views\\ParametrePosteView.xaml",
+              "RelativeDocumentMoniker": "GestionCyberCafe\\Views\\ParametrePosteView.xaml",
+              "ToolTip": "D:\\GestionCyberCafe\\GestionCyberCafe\\Views\\ParametrePosteView.xaml",
+              "RelativeToolTip": "GestionCyberCafe\\Views\\ParametrePosteView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-09T14:26:36.443Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\GestionCyberCafe\\GestionCyberCafe\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "GestionCyberCafe\\MainWindow.xaml",
+              "ToolTip": "D:\\GestionCyberCafe\\GestionCyberCafe\\MainWindow.xaml",
+              "RelativeToolTip": "GestionCyberCafe\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-08T17:14:03.17Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AbonnementInternetView.xaml",
+              "DocumentMoniker": "D:\\GestionCyberCafe\\GestionCyberCafe\\Views\\AbonnementInternetView.xaml",
+              "RelativeDocumentMoniker": "GestionCyberCafe\\Views\\AbonnementInternetView.xaml",
+              "ToolTip": "D:\\GestionCyberCafe\\GestionCyberCafe\\Views\\AbonnementInternetView.xaml",
+              "RelativeToolTip": "GestionCyberCafe\\Views\\AbonnementInternetView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-09T17:42:26.91Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AbonnementActiveView.xaml",
+              "DocumentMoniker": "D:\\GestionCyberCafe\\GestionCyberCafe\\Views\\AbonnementActiveView.xaml",
+              "RelativeDocumentMoniker": "GestionCyberCafe\\Views\\AbonnementActiveView.xaml",
+              "ToolTip": "D:\\GestionCyberCafe\\GestionCyberCafe\\Views\\AbonnementActiveView.xaml",
+              "RelativeToolTip": "GestionCyberCafe\\Views\\AbonnementActiveView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-09T17:42:15.28Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ParametreTarifView.xaml",
+              "DocumentMoniker": "D:\\GestionCyberCafe\\GestionCyberCafe\\Views\\ParametreTarifView.xaml",
+              "RelativeDocumentMoniker": "GestionCyberCafe\\Views\\ParametreTarifView.xaml",
+              "ToolTip": "D:\\GestionCyberCafe\\GestionCyberCafe\\Views\\ParametreTarifView.xaml",
+              "RelativeToolTip": "GestionCyberCafe\\Views\\ParametreTarifView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-09T17:02:26.36Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Poste.cs",
+              "DocumentMoniker": "D:\\GestionCyberCafe\\GestionCyberCafe\\ModelsR\\Poste.cs",
+              "RelativeDocumentMoniker": "GestionCyberCafe\\ModelsR\\Poste.cs",
+              "ToolTip": "D:\\GestionCyberCafe\\GestionCyberCafe\\ModelsR\\Poste.cs",
+              "RelativeToolTip": "GestionCyberCafe\\ModelsR\\Poste.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T14:30:17.249Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ParametrePosteView.xaml.cs",
+              "DocumentMoniker": "D:\\GestionCyberCafe\\GestionCyberCafe\\Views\\ParametrePosteView.xaml.cs",
+              "RelativeDocumentMoniker": "GestionCyberCafe\\Views\\ParametrePosteView.xaml.cs",
+              "ToolTip": "D:\\GestionCyberCafe\\GestionCyberCafe\\Views\\ParametrePosteView.xaml.cs",
+              "RelativeToolTip": "GestionCyberCafe\\Views\\ParametrePosteView.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T14:26:31.2Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ParametreView.xaml",
+              "DocumentMoniker": "D:\\GestionCyberCafe\\GestionCyberCafe\\Views\\ParametreView.xaml",
+              "RelativeDocumentMoniker": "GestionCyberCafe\\Views\\ParametreView.xaml",
+              "ToolTip": "D:\\GestionCyberCafe\\GestionCyberCafe\\Views\\ParametreView.xaml",
+              "RelativeToolTip": "GestionCyberCafe\\Views\\ParametreView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-09T17:08:52.839Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "LoginWindow.xaml",
+              "DocumentMoniker": "D:\\GestionCyberCafe\\GestionCyberCafe\\Views\\LoginWindow.xaml",
+              "RelativeDocumentMoniker": "GestionCyberCafe\\Views\\LoginWindow.xaml",
+              "ToolTip": "D:\\GestionCyberCafe\\GestionCyberCafe\\Views\\LoginWindow.xaml",
+              "RelativeToolTip": "GestionCyberCafe\\Views\\LoginWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-08T17:25:08.064Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "LoginWindow.xaml.cs",
+              "DocumentMoniker": "D:\\GestionCyberCafe\\GestionCyberCafe\\Views\\LoginWindow.xaml.cs",
+              "RelativeDocumentMoniker": "GestionCyberCafe\\Views\\LoginWindow.xaml.cs",
+              "ToolTip": "D:\\GestionCyberCafe\\GestionCyberCafe\\Views\\LoginWindow.xaml.cs",
+              "RelativeToolTip": "GestionCyberCafe\\Views\\LoginWindow.xaml.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowCYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T17:26:05.308Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DashboardView.xaml.cs",
+              "DocumentMoniker": "D:\\GestionCyberCafe\\GestionCyberCafe\\Views\\DashboardView.xaml.cs",
+              "RelativeDocumentMoniker": "GestionCyberCafe\\Views\\DashboardView.xaml.cs",
+              "ToolTip": "D:\\GestionCyberCafe\\GestionCyberCafe\\Views\\DashboardView.xaml.cs",
+              "RelativeToolTip": "GestionCyberCafe\\Views\\DashboardView.xaml.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAmwFIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T15:57:06.245Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DashboardView.xaml",
+              "DocumentMoniker": "D:\\GestionCyberCafe\\GestionCyberCafe\\Views\\DashboardView.xaml",
+              "RelativeDocumentMoniker": "GestionCyberCafe\\Views\\DashboardView.xaml",
+              "ToolTip": "D:\\GestionCyberCafe\\GestionCyberCafe\\Views\\DashboardView.xaml",
+              "RelativeToolTip": "GestionCyberCafe\\Views\\DashboardView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-08T16:52:58.503Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

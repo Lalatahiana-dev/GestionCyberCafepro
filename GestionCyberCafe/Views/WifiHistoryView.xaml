@@ -1,0 +1,171 @@
+﻿<UserControl x:Class="Gestion_CyberCafe.Views.Wifi.WifiHistoryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="#F5F7FB">
+
+    <Grid Margin="20">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- ================= HEADER ================= -->
+        <Border Grid.Row="0"
+                Background="White"
+                CornerRadius="14"
+                Padding="20"
+                Margin="0,0,0,15"
+                BorderBrush="#E6EAF0"
+                BorderThickness="1">
+
+            <StackPanel>
+
+                <TextBlock Text="📜 WIFI HISTORY"
+                           FontSize="22"
+                           FontWeight="SemiBold"
+                           Foreground="#111827"
+                           Margin="0,0,0,18"/>
+
+                <!-- SEARCH -->
+                <TextBlock Text="Recherche"
+                           Foreground="#6B7280"
+                           Margin="0,0,0,5"/>
+
+                <TextBox x:Name="txtSearch"
+                         Height="38"
+                         Padding="10,0"
+                         Background="#F9FAFB"
+                         BorderBrush="#D1D5DB"/>
+
+                <!-- FILTER -->
+                <WrapPanel Margin="0,15,0,0">
+
+                    <StackPanel Margin="0,0,12,10">
+                        <TextBlock Text="Date début" Foreground="#6B7280"/>
+                        <DatePicker x:Name="dpDebut" Width="150"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="0,0,12,10">
+                        <TextBlock Text="Date fin" Foreground="#6B7280"/>
+                        <DatePicker x:Name="dpFin" Width="150"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="0,0,12,10">
+                        <TextBlock Text="Statut" Foreground="#6B7280"/>
+                        <ComboBox x:Name="cbStatut" Width="150">
+                            <ComboBoxItem Content="TOUS"/>
+                            <ComboBoxItem Content="ACTIVE"/>
+                            <ComboBoxItem Content="TERMINEE"/>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <!-- BUTTONS -->
+                    <StackPanel Orientation="Horizontal" Margin="0,18,0,0">
+
+                        <Button Content="Rechercher"
+                                Width="120"
+                                Height="38"
+                                Margin="0,0,10,0"
+                                Background="#2563EB"
+                                Foreground="White"
+                                BorderThickness="0"
+                                Cursor="Hand"
+                                Click="BtnRechercher_Click"/>
+
+                        <Button Content="Reset"
+                                Width="100"
+                                Height="38"
+                                Margin="0,0,10,0"
+                                Background="#6B7280"
+                                Foreground="White"
+                                BorderThickness="0"
+                                Cursor="Hand"
+                                Click="BtnReset_Click"/>
+
+                        <Button Content="Tout supprimer"
+                                Width="140"
+                                Height="38"
+                                Background="#EF4444"
+                                Foreground="White"
+                                BorderThickness="0"
+                                Cursor="Hand"
+                                Click="BtnDeleteAll_Click"/>
+
+                    </StackPanel>
+
+                </WrapPanel>
+
+            </StackPanel>
+
+        </Border>
+
+        <!-- ================= DATAGRID ================= -->
+        <Border Grid.Row="1"
+                Background="White"
+                CornerRadius="14"
+                Padding="10"
+                BorderBrush="#E6EAF0"
+                BorderThickness="1">
+
+            <DataGrid x:Name="dgWifiHistory"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      CanUserAddRows="False"
+                      GridLinesVisibility="None"
+                      HeadersVisibility="Column"
+                      RowBackground="White"
+                      AlternatingRowBackground="#F9FAFB"
+                      BorderThickness="0">
+
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn Header="Client" Binding="{Binding NomClient}" Width="*"/>
+                    <DataGridTextColumn Header="Appareil" Binding="{Binding MarqueAppareil}" Width="140"/>
+                    <DataGridTextColumn Header="Réseau" Binding="{Binding TypeReseau}" Width="100"/>
+                    <DataGridTextColumn Header="Début" Binding="{Binding HeureDebut}" Width="140"/>
+                    <DataGridTextColumn Header="Fin" Binding="{Binding HeureFin}" Width="140"/>
+                    <DataGridTextColumn Header="Durée" Binding="{Binding DureeMinutes}" Width="100"/>
+                    <DataGridTextColumn Header="Montant" Binding="{Binding MontantTotal}" Width="120"/>
+
+                    <!-- STATUS (FIXED TEMPLATE) -->
+                    <DataGridTemplateColumn Header="Statut" Width="110">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border Background="#DCFCE7"
+                                        CornerRadius="8"
+                                        Padding="6"
+                                        HorizontalAlignment="Center">
+
+                                    <TextBlock Text="{Binding Statut}"
+                                               Foreground="#166534"
+                                               FontWeight="SemiBold"/>
+                                </Border>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <!-- ACTION -->
+                    <DataGridTemplateColumn Header="Action" Width="80">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="🗑"
+                                        Width="32"
+                                        Height="32"
+                                        Background="#EF4444"
+                                        Foreground="White"
+                                        BorderThickness="0"
+                                        Cursor="Hand"
+                                        Click="BtnDelete_Click"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+
+        </Border>
+
+    </Grid>
+</UserControl>

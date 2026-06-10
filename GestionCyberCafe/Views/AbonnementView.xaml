@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="Gestion_CyberCafe.Views.Abonnement.AbonnementView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="#F9FAFB">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+        <Grid Margin="20">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- ================= TITLE ================= -->
+            <TextBlock Grid.Row="0"
+                       Text="Gestion des abonnements Internet"
+                       FontSize="24"
+                       FontWeight="SemiBold"
+                       Foreground="#111827"
+                       Margin="0,0,0,15"/>
+
+            <!-- ================= MENU ================= -->
+            <Border Grid.Row="1"
+                    Background="White"
+                    CornerRadius="10"
+                    BorderBrush="#E5E7EB"
+                    BorderThickness="1"
+                    Padding="8"
+                    Margin="0,0,0,15">
+
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Activation -->
+                    <Button Grid.Column="0"
+                            Content="➕ Activation"
+                            Height="40"
+                            Margin="5"
+                            Background="#2563EB"
+                            Foreground="White"
+                            BorderThickness="0"
+                            FontWeight="SemiBold"
+                            Cursor="Hand"
+                            Click="BtnActivation_Click"/>
+
+                    <!-- Actifs -->
+                    <Button Grid.Column="1"
+                            Content="🟢 Actifs"
+                            Height="40"
+                            Margin="5"
+                            Background="#F3F4F6"
+                            Foreground="#111827"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            Click="BtnActifs_Click"/>
+
+                    <!-- Historique -->
+                    <Button Grid.Column="2"
+                            Content="📜 Historique"
+                            Height="40"
+                            Margin="5"
+                            Background="#F3F4F6"
+                            Foreground="#111827"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            Click="BtnHistorique_Click"/>
+
+                </Grid>
+
+            </Border>
+
+            <!-- ================= CONTENT ================= -->
+            <Border Grid.Row="2"
+                    Background="White"
+                    CornerRadius="10"
+                    Padding="15"
+                    BorderBrush="#E5E7EB"
+                    BorderThickness="1">
+
+                <ContentControl x:Name="MainArea"/>
+
+            </Border>
+
+        </Grid>
+
+    </ScrollViewer>
+
+</UserControl>
