@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "D:\\GestionCyberCafepro\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|D:\\GestionCyberCafepro\\gestioncybercafe\\views\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|solutionrelative:gestioncybercafe\\views\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|d:\\gestioncybercafepro\\gestioncybercafe\\views\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|D:\\GestionCyberCafepro\\gestioncybercafe\\views\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|solutionrelative:gestioncybercafe\\views\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|D:\\GestionCyberCafepro\\gestioncybercafe\\views\\dashboardview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{882464A5-8FB8-4839-9C68-40EEF9034481}|GestionCyberCafe\\GestionCyberCafe.csproj|solutionrelative:gestioncybercafe\\views\\dashboardview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,19 +19,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "LoginWindow.xaml.cs",
-              "DocumentMoniker": "D:\\GestionCyberCafepro\\GestionCyberCafe\\Views\\LoginWindow.xaml.cs",
-              "RelativeDocumentMoniker": "GestionCyberCafe\\Views\\LoginWindow.xaml.cs",
-              "ToolTip": "D:\\GestionCyberCafepro\\GestionCyberCafe\\Views\\LoginWindow.xaml.cs",
-              "RelativeToolTip": "GestionCyberCafe\\Views\\LoginWindow.xaml.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAIwE4AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-08T17:26:05.308Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "LoginWindow.xaml",
               "DocumentMoniker": "D:\\GestionCyberCafepro\\GestionCyberCafe\\Views\\LoginWindow.xaml",
               "RelativeDocumentMoniker": "GestionCyberCafe\\Views\\LoginWindow.xaml",
@@ -48,18 +27,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-06-10T16:11:11.499Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DashboardView.xaml.cs",
-              "DocumentMoniker": "D:\\GestionCyberCafepro\\GestionCyberCafe\\Views\\DashboardView.xaml.cs",
-              "RelativeDocumentMoniker": "GestionCyberCafe\\Views\\DashboardView.xaml.cs",
-              "ToolTip": "D:\\GestionCyberCafepro\\GestionCyberCafe\\Views\\DashboardView.xaml.cs",
-              "RelativeToolTip": "GestionCyberCafe\\Views\\DashboardView.xaml.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAmwFIAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-08T15:57:06.245Z"
             }
           ]
         }

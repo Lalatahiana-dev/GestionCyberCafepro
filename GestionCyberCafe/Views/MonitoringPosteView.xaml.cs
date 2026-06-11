@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Gestion_CyberCafe.Data;
+using System;
 using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
-using Gestion_CyberCafe.Data;
 
 namespace Gestion_CyberCafe.Views.Poste
 {
@@ -98,63 +99,111 @@ namespace Gestion_CyberCafe.Views.Poste
 
         // ================= ACTIONS =================
 
-        private void BtnTerminer_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void BtnTerminer_Click(object sender, RoutedEventArgs e)
         {
-            var btn = sender as Button;
+            if (!(sender is Button btn))
+                return;
+
+            if (btn.Tag == null)
+            {
+                MessageBox.Show("Tag du bouton introuvable.");
+                return;
+            }
+
             string nomPoste = btn.Tag.ToString();
 
             var poste = _context.Postes
-                .FirstOrDefault(p => p.NomPoste == nomPoste);
+                                .FirstOrDefault(p => p.NomPoste == nomPoste);
 
-            if (poste == null) return;
+            if (poste == null)
+            {
+                MessageBox.Show("Poste introuvable.");
+                return;
+            }
 
             var session = _context.SessionPostes
-                .FirstOrDefault(s =>
-                    s.IdPoste == poste.IdPoste &&
-                    s.Statut == "ACTIVE");
+                                  .FirstOrDefault(s =>
+                                      s.IdPoste == poste.IdPoste &&
+                                      s.Statut == "ACTIVE");
 
-            if (session != null)
+            if (session == null)
             {
-                session.Statut = "TERMINEE";
-                session.HeureFin = DateTime.Now;
-
-                poste.Statut = "LIBRE";
-
-                _context.SaveChanges();
-                ChargerDonnees();
+                MessageBox.Show("Aucune session active trouvée.");
+                return;
             }
+
+            session.Statut = "TERMINEE";
+            session.HeureFin = DateTime.Now;
+
+            poste.Statut = "LIBRE";
+
+            _context.SaveChanges();
+
+            ChargerDonnees();
+
+            MessageBox.Show("Session terminée avec succès.");
         }
 
-        private void BtnMaintenance_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void BtnMaintenance_Click(object sender, RoutedEventArgs e)
         {
-            var btn = sender as Button;
+            if (!(sender is Button btn))
+                return;
+
+            if (btn.Tag == null)
+            {
+                MessageBox.Show("Tag du bouton introuvable.");
+                return;
+            }
+
             string nomPoste = btn.Tag.ToString();
 
             var poste = _context.Postes
-                .FirstOrDefault(p => p.NomPoste == nomPoste);
+                                .FirstOrDefault(p => p.NomPoste == nomPoste);
 
-            if (poste != null)
+            if (poste == null)
             {
-                poste.Statut = "MAINTENANCE";
-                _context.SaveChanges();
-                ChargerDonnees();
+                MessageBox.Show("Poste introuvable.");
+                return;
             }
+
+            poste.Statut = "MAINTENANCE";
+
+            _context.SaveChanges();
+
+            ChargerDonnees();
+
+            MessageBox.Show($"Le poste {nomPoste} est maintenant en maintenance.");
         }
 
-        private void BtnLibre_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void BtnLibre_Click(object sender, RoutedEventArgs e)
         {
-            var btn = sender as Button;
+            if (!(sender is Button btn))
+                return;
+
+            if (btn.Tag == null)
+            {
+                MessageBox.Show("Tag du bouton introuvable.");
+                return;
+            }
+
             string nomPoste = btn.Tag.ToString();
 
             var poste = _context.Postes
-                .FirstOrDefault(p => p.NomPoste == nomPoste);
+                                .FirstOrDefault(p => p.NomPoste == nomPoste);
 
-            if (poste != null)
+            if (poste == null)
             {
-                poste.Statut = "LIBRE";
-                _context.SaveChanges();
-                ChargerDonnees();
+                MessageBox.Show("Poste introuvable.");
+                return;
             }
+
+            poste.Statut = "LIBRE";
+
+            _context.SaveChanges();
+
+            ChargerDonnees();
+
+            MessageBox.Show($"Le poste {nomPoste} est maintenant libre.");
         }
     }
 }

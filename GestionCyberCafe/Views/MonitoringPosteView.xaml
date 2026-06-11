@@ -147,32 +147,50 @@
                     <DataGridTextColumn Header="Statut Poste" Binding="{Binding StatutPoste}" Width="120"/>
 
                     <!-- ACTIONS -->
-                    <DataGridTemplateColumn Header="Actions" Width="220">
+                    <DataGridTemplateColumn Header="Actions" Width="140">
 
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
 
                                 <StackPanel Orientation="Horizontal">
 
-                                    <Button Background="#F59E0B" Foreground="White" Margin="2" Click="BtnMaintenance_Click">
+                                    <Button Background="#F59E0B"
+                                            Foreground="White"
+                                            Margin="2"
+                                            Tag="{Binding NomPoste}"
+                                            Click="BtnMaintenance_Click">
+
                                         <StackPanel Orientation="Horizontal">
                                             <fa:ImageAwesome Icon="Wrench" Width="12" Margin="0,0,5,0"/>
-                                            <TextBlock Text="Maintenance"/>
+                                            
                                         </StackPanel>
+
                                     </Button>
 
-                                    <Button Background="#16A34A" Foreground="White" Margin="2" Click="BtnLibre_Click">
+                                    <Button Background="#16A34A"
+                                            Foreground="White"
+                                            Margin="2"
+                                            Tag="{Binding NomPoste}"
+                                            Click="BtnLibre_Click">
+
                                         <StackPanel Orientation="Horizontal">
                                             <fa:ImageAwesome Icon="CheckCircle" Width="12" Margin="0,0,5,0"/>
-                                            <TextBlock Text="Libre"/>
+                                           
                                         </StackPanel>
+
                                     </Button>
 
-                                    <Button Background="#DC2626" Foreground="White" Margin="2" Click="BtnTerminer_Click">
+                                    <Button Background="#DC2626"
+                                            Foreground="White"
+                                            Margin="2"
+                                            Tag="{Binding NomPoste}"
+                                            Click="BtnTerminer_Click">
+
                                         <StackPanel Orientation="Horizontal">
                                             <fa:ImageAwesome Icon="TimesCircle" Width="12" Margin="0,0,5,0"/>
-                                            <TextBlock Text="Terminer"/>
+                                            
                                         </StackPanel>
+
                                     </Button>
 
                                 </StackPanel>

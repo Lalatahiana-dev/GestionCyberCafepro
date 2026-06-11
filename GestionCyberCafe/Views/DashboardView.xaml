@@ -23,7 +23,7 @@
 
             <TextBlock Text="TABLEAU DE BORD"
                        FontSize="28"
-                       Padding="20"
+                       Margin="10"
                        FontWeight="Bold"
                        Foreground="#1E293B"/>
         </StackPanel>

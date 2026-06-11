@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Gestion_CyberCafe.Data;
+using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Windows;
+using System.Data.Entity;
 using System.Windows.Controls;
-using Gestion_CyberCafe.Data;
 
 namespace Gestion_CyberCafe.Views.Poste
 {
@@ -49,10 +51,12 @@ namespace Gestion_CyberCafe.Views.Poste
         {
             string key = txtSearch.Text?.Trim().ToLower();
 
+            DateTime? dateDebut = dpDebut.SelectedDate;
+            DateTime? dateFin = dpFin.SelectedDate;
+
             var query = from s in _context.SessionPostes
                         join p in _context.Postes on s.IdPoste equals p.IdPoste
                         join c in _context.Clients on s.IdClient equals c.IdClient
-
                         select new
                         {
                             s.IdSessionPoste,
@@ -65,59 +69,82 @@ namespace Gestion_CyberCafe.Views.Poste
                             s.DureeMinutes
                         };
 
+            // Recherche texte
             if (!string.IsNullOrWhiteSpace(key))
             {
                 query = query.Where(x =>
                     x.Client.ToLower().Contains(key) ||
                     x.Poste.ToLower().Contains(key) ||
                     x.Statut.ToLower().Contains(key) ||
-                    x.Montant.ToString().Contains(key)
-                );
+                    x.Montant.ToString().Contains(key));
             }
 
-            dgHistorique.ItemsSource = query.Select(x => new
+            // Date début uniquement
+            if (dateDebut.HasValue && !dateFin.HasValue)
             {
-                IdSessionPoste = x.IdSessionPoste,
+                DateTime debut = dateDebut.Value.Date;
 
-                NomClient = x.Client,
-                NomPoste = x.Poste,
+                query = query.Where(x =>
+                    DbFunctions.TruncateTime(x.HeureDebut) >= debut);
+            }
 
-                HeureDebut = x.HeureDebut,
-                HeureFin = x.HeureFin,
+            // Date fin uniquement
+            if (!dateDebut.HasValue && dateFin.HasValue)
+            {
+                DateTime fin = dateFin.Value.Date;
 
-                DureeMinutes = x.DureeMinutes,
+                query = query.Where(x =>
+                    DbFunctions.TruncateTime(x.HeureDebut) <= fin);
+            }
 
-                MontantTotal = x.Montant + " Ar",
+            // Date début + date fin
+            if (dateDebut.HasValue && dateFin.HasValue)
+            {
+                DateTime debut = dateDebut.Value.Date;
+                DateTime fin = dateFin.Value.Date;
 
-                Statut = x.Statut
-            }).ToList();
+                if (debut > fin)
+                {
+                    MessageBox.Show(
+                        "La date début doit être inférieure à la date fin.",
+                        "Erreur",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+
+                    return;
+                }
+
+                query = query.Where(x =>
+                    DbFunctions.TruncateTime(x.HeureDebut) >= debut &&
+                    DbFunctions.TruncateTime(x.HeureDebut) <= fin);
+            }
+
+            dgHistorique.ItemsSource = query
+                .ToList()
+                .Select(x => new
+                {
+                    IdSessionPoste = x.IdSessionPoste,
+                    NomClient = x.Client,
+                    NomPoste = x.Poste,
+                    HeureDebut = x.HeureDebut,
+                    HeureFin = x.HeureFin,
+                    DureeMinutes = x.DureeMinutes,
+                    MontantTotal = x.Montant + " Ar",
+                    Statut = x.Statut
+                });
         }
 
         // ================= RESET =================
         private void BtnReset_Click(object sender, RoutedEventArgs e)
         {
             txtSearch.Clear();
+
+            dpDebut.SelectedDate = null;
+            dpFin.SelectedDate = null;
+
             ChargerHistorique();
         }
-
-        // ================= DELETE ALL =================
-        private void BtnSupprimerTous_Click(object sender, RoutedEventArgs e)
-        {
-            if (MessageBox.Show("Voulez-vous supprimer tout l'historique ?",
-                "Confirmation",
-                MessageBoxButton.YesNo,
-                MessageBoxImage.Warning) == MessageBoxResult.Yes)
-            {
-                var all = _context.SessionPostes.ToList();
-
-                _context.SessionPostes.RemoveRange(all);
-                _context.SaveChanges();
-
-                ChargerHistorique();
-
-                MessageBox.Show("Historique supprimé ✔");
-            }
-        }
+        
 
         // ================= DELETE SINGLE =================
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
