@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\GestionCyberCafe\GestionCyberCafe\obj\Debug\
+D:\GestionCyberCafepro\GestionCyberCafe\obj\Debug\
 GestionCyberCafe
 none
 false
 DEBUG;TRACE
-D:\GestionCyberCafe\GestionCyberCafe\App.xaml
+D:\GestionCyberCafepro\GestionCyberCafe\App.xaml
 25-549806161
 
 76511632346
-18-1058979381
+201440154632
 MainWindow.xaml;Views\AbonnementActiveView.xaml;Views\AbonnementHistoryView.xaml;Views\AbonnementInternetView.xaml;Views\AbonnementLongView.xaml;Views\AbonnementView.xaml;Views\ClientView.xaml;Views\DashboardView.xaml;Views\ForfaitView.xaml;Views\GestionPosteView.xaml;Views\HistoriquePosteView.xaml;Views\LoginWindow.xaml;Views\ModifierAbonnementWindow.xaml;Views\MonitoringPosteView.xaml;Views\ParametreGeneralView.xaml;Views\ParametrePosteView.xaml;Views\ParametreTarifView.xaml;Views\ParametreUserView.xaml;Views\ParametreView.xaml;Views\PosteView.xaml;Views\SessionPosteView.xaml;Views\SessionWifiView.xaml;Views\WifiActiveView.xaml;Views\WifiClientView.xaml;Views\WifiHistoryView.xaml;
 
 False

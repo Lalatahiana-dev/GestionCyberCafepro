@@ -1,7 +1,8 @@
 ﻿<UserControl x:Class="Gestion_CyberCafe.Views.Parametre.ParametreUserView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             Background="#F9FAFB" >
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
+             Background="#F9FAFB">
 
     <Grid Margin="20">
 
@@ -10,31 +11,63 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- ================= TOP FORM + SEARCH ================= -->
+        <!-- ================= TOP CARD ================= -->
         <Border Grid.Row="0"
                 Background="White"
+                CornerRadius="12"
                 BorderBrush="#E5E7EB"
                 BorderThickness="1"
-                CornerRadius="12"
                 Padding="15"
                 Margin="0,0,0,15">
 
             <StackPanel>
 
                 <!-- TITLE -->
-                <TextBlock Text="Gestion des utilisateurs"
-                           FontSize="22"
-                           FontWeight="SemiBold"
-                           Foreground="#111827"
-                           Margin="0,0,0,15"/>
+                <DockPanel Margin="0,0,0,15">
+
+                    <fa:ImageAwesome Icon="Users"
+                                     Width="20"
+                                     Height="20"
+                                     Foreground="#2563EB"
+                                     Margin="0,0,10,0"/>
+
+                    <TextBlock Text="Gestion des utilisateurs"
+                               FontSize="22"
+                               FontWeight="SemiBold"
+                               Foreground="#111827"/>
+                </DockPanel>
 
                 <!-- SEARCH -->
-                <TextBlock Text="Recherche utilisateur"
-                           Foreground="#6B7280"/>
-                <TextBox x:Name="txtSearch"
-                         Height="35"
-                         Margin="0,5,0,15"
-                         BorderBrush="#E5E7EB"/>
+                <Border Background="#F9FAFB"
+                        CornerRadius="8"
+                        BorderBrush="#E5E7EB"
+                        BorderThickness="1"
+                        Padding="5"
+                        Margin="0,0,0,15">
+
+                    <Grid Height="38">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <fa:ImageAwesome Icon="Search"
+                                         Width="14"
+                                         Height="14"
+                                         Foreground="#6B7280"
+                                         HorizontalAlignment="Center"
+                                         VerticalAlignment="Center"/>
+
+                        <TextBox x:Name="txtSearch"
+                                 Grid.Column="1"
+                                 BorderThickness="0"
+                                 Background="Transparent"
+                                 VerticalContentAlignment="Center"/>
+
+                    </Grid>
+
+                </Border>
 
                 <!-- FORM -->
                 <Grid Margin="0,0,0,15">
@@ -47,30 +80,20 @@
 
                     <!-- USERNAME -->
                     <StackPanel Grid.Column="0" Margin="5">
-                        <TextBlock Text="Nom utilisateur"
-                                   Foreground="#6B7280"/>
-                        <TextBox x:Name="txtUsername"
-                                 Height="35"
-                                 Margin="0,5,0,0"
-                                 BorderBrush="#E5E7EB"/>
+                        <TextBlock Text="Nom utilisateur" Foreground="#6B7280"/>
+                        <TextBox x:Name="txtUsername" Height="38"/>
                     </StackPanel>
 
                     <!-- PASSWORD -->
                     <StackPanel Grid.Column="1" Margin="5">
-                        <TextBlock Text="Mot de passe"
-                                   Foreground="#6B7280"/>
-                        <PasswordBox x:Name="txtPassword"
-                                     Height="35"
-                                     Margin="0,5,0,0"/>
+                        <TextBlock Text="Mot de passe" Foreground="#6B7280"/>
+                        <PasswordBox x:Name="txtPassword" Height="38"/>
                     </StackPanel>
 
                     <!-- ROLE -->
                     <StackPanel Grid.Column="2" Margin="5">
-                        <TextBlock Text="Rôle"
-                                   Foreground="#6B7280"/>
-                        <ComboBox x:Name="cbRole"
-                                  Height="35"
-                                  Margin="0,5,0,0">
+                        <TextBlock Text="Rôle" Foreground="#6B7280"/>
+                        <ComboBox x:Name="cbRole" Height="38">
                             <ComboBoxItem Content="ADMIN"/>
                             <ComboBoxItem Content="CAISSIER"/>
                         </ComboBox>
@@ -82,41 +105,69 @@
                 <StackPanel Orientation="Horizontal"
                             HorizontalAlignment="Right">
 
-                    <Button Content="Ajouter"
-                            Width="110"
-                            Height="36"
+                    <!-- AJOUT -->
+                    <Button Width="110"
+                            Height="38"
                             Margin="5"
                             Background="#2563EB"
                             Foreground="White"
                             BorderThickness="0"
-                            Click="BtnAjouter_Click"/>
+                            Click="BtnAjouter_Click">
 
-                    <Button Content="Modifier"
-                            Width="110"
-                            Height="36"
+                        <StackPanel Orientation="Horizontal">
+                            <fa:ImageAwesome Icon="Plus" Width="12" Height="12" Margin="0,0,8,0"/>
+                            <TextBlock Text="Ajouter"/>
+                        </StackPanel>
+
+                    </Button>
+
+                    <!-- MODIFIER -->
+                    <Button Width="110"
+                            Height="38"
                             Margin="5"
                             Background="#6B7280"
                             Foreground="White"
                             BorderThickness="0"
-                            Click="BtnModifier_Click"/>
+                            Click="BtnModifier_Click">
 
-                    <Button Content="Supprimer"
-                            Width="110"
-                            Height="36"
+                        <StackPanel Orientation="Horizontal">
+                            <fa:ImageAwesome Icon="Edit" Width="12" Height="12" Margin="0,0,8,0"/>
+                            <TextBlock Text="Modifier"/>
+                        </StackPanel>
+
+                    </Button>
+
+                    <!-- SUPPRIMER -->
+                    <Button Width="110"
+                            Height="38"
                             Margin="5"
                             Background="#DC2626"
                             Foreground="White"
                             BorderThickness="0"
-                            Click="BtnSupprimer_Click"/>
+                            Click="BtnSupprimer_Click">
 
-                    <Button Content="Vider"
-                            Width="110"
-                            Height="36"
+                        <StackPanel Orientation="Horizontal">
+                            <fa:ImageAwesome Icon="Trash" Width="12" Height="12" Margin="0,0,8,0"/>
+                            <TextBlock Text="Supprimer"/>
+                        </StackPanel>
+
+                    </Button>
+
+                    <!-- VIDER -->
+                    <Button Width="110"
+                            Height="38"
                             Margin="5"
                             Background="#9CA3AF"
                             Foreground="White"
                             BorderThickness="0"
-                            Click="BtnClear_Click"/>
+                            Click="BtnClear_Click">
+
+                        <StackPanel Orientation="Horizontal">
+                            <fa:ImageAwesome Icon="Refresh" Width="12" Height="12" Margin="0,0,8,0"/>
+                            <TextBlock Text="Vider"/>
+                        </StackPanel>
+
+                    </Button>
 
                 </StackPanel>
 
@@ -124,12 +175,12 @@
 
         </Border>
 
-        <!-- ================= DATAGRID ================= -->
+        <!-- ================= TABLE ================= -->
         <Border Grid.Row="1"
                 Background="White"
+                CornerRadius="12"
                 BorderBrush="#E5E7EB"
                 BorderThickness="1"
-                CornerRadius="12"
                 Padding="10">
 
             <DataGrid x:Name="dgUsers"
@@ -139,9 +190,9 @@
                       GridLinesVisibility="None"
                       RowHeight="40"
                       HeadersVisibility="Column"
-                      Background="White">
+                      Background="White"
+                      AlternatingRowBackground="#F9FAFB">
 
-                <!-- HEADER STYLE -->
                 <DataGrid.ColumnHeaderStyle>
                     <Style TargetType="DataGridColumnHeader">
                         <Setter Property="Background" Value="#F3F4F6"/>
@@ -157,7 +208,7 @@
                                         Binding="{Binding IdUser}"
                                         Width="80"/>
 
-                    <DataGridTextColumn Header="Nom Utilisateur"
+                    <DataGridTextColumn Header="Nom utilisateur"
                                         Binding="{Binding Username}"
                                         Width="*"/>
 

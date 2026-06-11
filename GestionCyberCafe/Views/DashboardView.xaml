@@ -1,9 +1,9 @@
 ﻿<UserControl x:Class="Gestion_CyberCafe.Views.DashboardView"
           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          xmlns:fa="http://schemas.fontawesome.io/icons/"
           Background="#F5F7FA" Width="1181" Height="628">
 
-    
     <Grid Margin="15">
 
         <Grid.RowDefinitions>
@@ -14,11 +14,19 @@
         </Grid.RowDefinitions>
 
         <!-- TITLE -->
-        <TextBlock Text="📊 TABLEAU DE BORD"
-               FontSize="28"
-               FontWeight="Bold"
-               Foreground="#1E293B"
-               Margin="5"/>
+        <StackPanel Orientation="Horizontal" Margin="5">
+
+            <fa:ImageAwesome Icon="BarChart"
+                             Width="22"
+                             Foreground="#2563EB"
+                             Margin="0,0,10,0"/>
+
+            <TextBlock Text="TABLEAU DE BORD"
+                       FontSize="28"
+                       Padding="20"
+                       FontWeight="Bold"
+                       Foreground="#1E293B"/>
+        </StackPanel>
 
         <!-- ================= ROW 1 ================= -->
         <Grid Grid.Row="1">
@@ -31,15 +39,16 @@
             </Grid.ColumnDefinitions>
 
             <!-- Sessions Poste -->
-            <Border Grid.Column="0"
-                Background="White"
-                CornerRadius="15"
-                Margin="5"
-                Padding="15">
-
+            <Border Grid.Column="0" Background="White" CornerRadius="15" Margin="5" Padding="15">
                 <StackPanel>
-                    <TextBlock Text="🖥 Sessions Poste"
-                           Foreground="Gray"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <fa:ImageAwesome Icon="Desktop"
+                                         Width="16"
+                                         Foreground="#2563EB"
+                                         Margin="0,0,6,0"/>
+                        <TextBlock Text="Sessions Poste" Foreground="Gray"/>
+                    </StackPanel>
 
                     <TextBlock x:Name="txtSessionsPoste"
                            Text="0"
@@ -47,19 +56,19 @@
                            FontWeight="Bold"
                            Foreground="#2563EB"/>
                 </StackPanel>
-
             </Border>
 
             <!-- Sessions Wifi -->
-            <Border Grid.Column="1"
-                Background="White"
-                CornerRadius="15"
-                Margin="5"
-                Padding="15">
-
+            <Border Grid.Column="1" Background="White" CornerRadius="15" Margin="5" Padding="15">
                 <StackPanel>
-                    <TextBlock Text="📶 Sessions Wifi"
-                           Foreground="Gray"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <fa:ImageAwesome Icon="Wifi"
+                                         Width="16"
+                                         Foreground="#10B981"
+                                         Margin="0,0,6,0"/>
+                        <TextBlock Text="Sessions Wifi" Foreground="Gray"/>
+                    </StackPanel>
 
                     <TextBlock x:Name="txtSessionsWifi"
                            Text="0"
@@ -67,19 +76,19 @@
                            FontWeight="Bold"
                            Foreground="#10B981"/>
                 </StackPanel>
-
             </Border>
 
             <!-- Clients -->
-            <Border Grid.Column="2"
-                Background="White"
-                CornerRadius="15"
-                Margin="5"
-                Padding="15">
-
+            <Border Grid.Column="2" Background="White" CornerRadius="15" Margin="5" Padding="15">
                 <StackPanel>
-                    <TextBlock Text="👤 Clients"
-                           Foreground="Gray"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <fa:ImageAwesome Icon="User"
+                                         Width="16"
+                                         Foreground="#F59E0B"
+                                         Margin="0,0,6,0"/>
+                        <TextBlock Text="Clients" Foreground="Gray"/>
+                    </StackPanel>
 
                     <TextBlock x:Name="txtClients"
                            Text="0"
@@ -87,19 +96,19 @@
                            FontWeight="Bold"
                            Foreground="#F59E0B"/>
                 </StackPanel>
-
             </Border>
 
             <!-- Abonnements Actifs -->
-            <Border Grid.Column="3"
-                Background="White"
-                CornerRadius="15"
-                Margin="5"
-                Padding="15">
-
+            <Border Grid.Column="3" Background="White" CornerRadius="15" Margin="5" Padding="15">
                 <StackPanel>
-                    <TextBlock Text="📅 Abonnements Actifs"
-                           Foreground="Gray"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <fa:ImageAwesome Icon="Calendar"
+                                         Width="16"
+                                         Foreground="#8B5CF6"
+                                         Margin="0,0,6,0"/>
+                        <TextBlock Text="Abonnements Actifs" Foreground="Gray"/>
+                    </StackPanel>
 
                     <TextBlock x:Name="txtAbonnementsActifs"
                            Text="0"
@@ -107,7 +116,6 @@
                            FontWeight="Bold"
                            Foreground="#8B5CF6"/>
                 </StackPanel>
-
             </Border>
 
         </Grid>
@@ -123,15 +131,16 @@
             </Grid.ColumnDefinitions>
 
             <!-- Suspendus -->
-            <Border Grid.Column="0"
-                Background="White"
-                CornerRadius="15"
-                Margin="5"
-                Padding="15">
-
+            <Border Grid.Column="0" Background="White" CornerRadius="15" Margin="5" Padding="15">
                 <StackPanel>
-                    <TextBlock Text="⛔ Suspendus"
-                           Foreground="Gray"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <fa:ImageAwesome Icon="Ban"
+                                         Width="16"
+                                         Foreground="#EF4444"
+                                         Margin="0,0,6,0"/>
+                        <TextBlock Text="Suspendus" Foreground="Gray"/>
+                    </StackPanel>
 
                     <TextBlock x:Name="txtSuspendus"
                            Text="0"
@@ -139,19 +148,19 @@
                            FontWeight="Bold"
                            Foreground="#EF4444"/>
                 </StackPanel>
-
             </Border>
 
             <!-- Expirés -->
-            <Border Grid.Column="1"
-                Background="White"
-                CornerRadius="15"
-                Margin="5"
-                Padding="15">
-
+            <Border Grid.Column="1" Background="White" CornerRadius="15" Margin="5" Padding="15">
                 <StackPanel>
-                    <TextBlock Text="⏰ Expirés"
-                           Foreground="Gray"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <fa:ImageAwesome Icon="ClockOutline"
+                                         Width="16"
+                                         Foreground="#DC2626"
+                                         Margin="0,0,6,0"/>
+                        <TextBlock Text="Expirés" Foreground="Gray"/>
+                    </StackPanel>
 
                     <TextBlock x:Name="txtExpires"
                            Text="0"
@@ -159,19 +168,19 @@
                            FontWeight="Bold"
                            Foreground="#DC2626"/>
                 </StackPanel>
-
             </Border>
 
             <!-- Postes Libres -->
-            <Border Grid.Column="2"
-                Background="White"
-                CornerRadius="15"
-                Margin="5"
-                Padding="15">
-
+            <Border Grid.Column="2" Background="White" CornerRadius="15" Margin="5" Padding="15">
                 <StackPanel>
-                    <TextBlock Text="🖥 Postes Libres"
-                           Foreground="Gray"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <fa:ImageAwesome Icon="Desktop"
+                                         Width="16"
+                                         Foreground="#0EA5E9"
+                                         Margin="0,0,6,0"/>
+                        <TextBlock Text="Postes Libres" Foreground="Gray"/>
+                    </StackPanel>
 
                     <TextBlock x:Name="txtPostes"
                            Text="0"
@@ -179,19 +188,19 @@
                            FontWeight="Bold"
                            Foreground="#0EA5E9"/>
                 </StackPanel>
-
             </Border>
 
             <!-- Total Abonnements -->
-            <Border Grid.Column="3"
-                Background="White"
-                CornerRadius="15"
-                Margin="5"
-                Padding="15">
-
+            <Border Grid.Column="3" Background="White" CornerRadius="15" Margin="5" Padding="15">
                 <StackPanel>
-                    <TextBlock Text="📚 Total Abonnements"
-                           Foreground="Gray"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <fa:ImageAwesome Icon="Database"
+                                         Width="16"
+                                         Foreground="#0891B2"
+                                         Margin="0,0,6,0"/>
+                        <TextBlock Text="Total Abonnements" Foreground="Gray"/>
+                    </StackPanel>
 
                     <TextBlock x:Name="txtTotalAbonnements"
                            Text="0"
@@ -199,7 +208,6 @@
                            FontWeight="Bold"
                            Foreground="#0891B2"/>
                 </StackPanel>
-
             </Border>
 
         </Grid>
@@ -218,10 +226,17 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Text="📋 Historique récent des abonnements"
-                       FontSize="18"
-                       FontWeight="Bold"
-                       Margin="5"/>
+                <StackPanel Orientation="Horizontal" Margin="5">
+
+                    <fa:ImageAwesome Icon="List"
+                                     Width="18"
+                                     Foreground="#1E293B"
+                                     Margin="0,0,8,0"/>
+
+                    <TextBlock Text="Historique récent des abonnements"
+                               FontSize="18"
+                               FontWeight="Bold"/>
+                </StackPanel>
 
                 <DataGrid x:Name="dgHistorique"
                       Grid.Row="1"
@@ -234,6 +249,5 @@
         </Border>
 
     </Grid>
- 
 
 </UserControl>

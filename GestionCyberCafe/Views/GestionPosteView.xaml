@@ -1,50 +1,62 @@
 ﻿<UserControl x:Class="Gestion_CyberCafe.Views.Poste.GestionPosteView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
              Background="#F5F7FA">
 
-    <Grid Margin="15">
+    <Grid Margin="20">
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="340"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- ================= LEFT : FORM ================= -->
+        <!-- ================= LEFT FORM ================= -->
         <Border Grid.Column="0"
                 Background="White"
-                CornerRadius="10"
-                Padding="15"
+                CornerRadius="14"
+                Padding="20"
                 BorderBrush="#E5E7EB"
-                BorderThickness="1"
-                Margin="0,0,10,0">
+                BorderThickness="1">
+
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="15" Opacity="0.08"/>
+            </Border.Effect>
 
             <StackPanel>
 
-                <TextBlock Text="Gestion des Postes"
-                           FontSize="20"
-                           FontWeight="Bold"
-                           Margin="0,0,0,15"
-                           Foreground="#1E293B"/>
+                <!-- TITLE -->
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
 
-                <!-- NOM POSTE -->
-                <TextBlock Text="Nom Poste" Foreground="Gray"/>
+                    <fa:ImageAwesome Icon="Desktop"
+                                     Width="18"
+                                     Height="18"
+                                     Foreground="#2563EB"
+                                     Margin="0,0,10,0"/>
+
+                    <TextBlock Text="Gestion des Postes"
+                               FontSize="22"
+                               FontWeight="SemiBold"
+                               Foreground="#111827"/>
+                </StackPanel>
+
+                <!-- NOM -->
+                <TextBlock Text="Nom Poste" Foreground="#6B7280"/>
                 <TextBox x:Name="txtNomPoste"
-                         Height="35"
-                         Margin="0,5,0,10"/>
+                         Height="40"
+                         Margin="0,5,0,12"/>
 
                 <!-- DESCRIPTION -->
-                <TextBlock Text="Description" Foreground="Gray"/>
+                <TextBlock Text="Description" Foreground="#6B7280"/>
                 <TextBox x:Name="txtDescription"
-                         Height="35"
-                         Margin="0,5,0,10"/>
+                         Height="40"
+                         Margin="0,5,0,12"/>
 
                 <!-- STATUT -->
-                <TextBlock Text="Statut" Foreground="Gray"/>
-
+                <TextBlock Text="Statut" Foreground="#6B7280"/>
                 <ComboBox x:Name="cbStatut"
-                          Height="35"
-                          Margin="0,5,0,15">
+                          Height="40"
+                          Margin="0,5,0,20">
 
                     <ComboBoxItem Content="LIBRE"/>
                     <ComboBoxItem Content="OCCUPE"/>
@@ -52,69 +64,151 @@
 
                 </ComboBox>
 
-                <!-- BUTTONS -->
-                <Button Content="➕ Ajouter"
-                        Height="35"
-                        Background="#16A34A"
-                        Foreground="White"
-                        BorderThickness="0"
-                        Margin="0,0,0,5"
-                        Click="BtnAjouter_Click"/>
+                <!-- BUTTONS PRO -->
+                <StackPanel>
 
-                <Button Content="✏ Modifier"
-                        Height="35"
-                        Background="#2563EB"
-                        Foreground="White"
-                        BorderThickness="0"
-                        Margin="0,0,0,5"
-                        Click="BtnModifier_Click"/>
+                    <!-- AJOUT -->
+                    <Button Height="40"
+                            Background="#16A34A"
+                            Foreground="White"
+                            BorderThickness="0"
+                            Margin="0,0,0,8"
+                            Click="BtnAjouter_Click">
 
-                <Button Content="🗑 Supprimer"
-                        Height="35"
-                        Background="#DC2626"
-                        Foreground="White"
-                        BorderThickness="0"
-                        Click="BtnSupprimer_Click"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                            <fa:ImageAwesome Icon="Plus"
+                                             Width="14"
+                                             Height="14"
+                                             Margin="0,0,8,0"/>
+
+                            <TextBlock Text="Ajouter"/>
+                        </StackPanel>
+
+                    </Button>
+
+                    <!-- MODIFIER -->
+                    <Button Height="40"
+                            Background="#2563EB"
+                            Foreground="White"
+                            BorderThickness="0"
+                            Margin="0,0,0,8"
+                            Click="BtnModifier_Click">
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                            <fa:ImageAwesome Icon="Edit"
+                                             Width="14"
+                                             Height="14"
+                                             Margin="0,0,8,0"/>
+
+                            <TextBlock Text="Modifier"/>
+                        </StackPanel>
+
+                    </Button>
+
+                    <!-- SUPPRIMER -->
+                    <Button Height="40"
+                            Background="#DC2626"
+                            Foreground="White"
+                            BorderThickness="0"
+                            Click="BtnSupprimer_Click">
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                            <fa:ImageAwesome Icon="Trash"
+                                             Width="14"
+                                             Height="14"
+                                             Margin="0,0,8,0"/>
+
+                            <TextBlock Text="Supprimer"/>
+                        </StackPanel>
+
+                    </Button>
+
+                </StackPanel>
 
             </StackPanel>
 
         </Border>
 
-        <!-- ================= RIGHT : LISTE ================= -->
+        <!-- ================= RIGHT LIST ================= -->
         <Border Grid.Column="1"
                 Background="White"
-                CornerRadius="10"
-                Padding="10"
+                CornerRadius="14"
+                Padding="15"
                 BorderBrush="#E5E7EB"
-                BorderThickness="1">
+                BorderThickness="1"
+                Margin="15,0,0,0">
 
-            <DataGrid x:Name="dgPostes"
-                      AutoGenerateColumns="False"
-                      IsReadOnly="True"
-                      SelectionMode="Single"
-                      SelectionChanged="dgPostes_SelectionChanged">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="15" Opacity="0.08"/>
+            </Border.Effect>
 
-                <DataGrid.Columns>
+            <Grid>
 
-                    <DataGridTextColumn Header="ID"
-                                        Binding="{Binding IdPoste}"
-                                        Width="60"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-                    <DataGridTextColumn Header="Nom"
-                                        Binding="{Binding NomPoste}"
-                                        Width="*"/>
+                <!-- HEADER -->
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
 
-                    <DataGridTextColumn Header="Description"
-                                        Binding="{Binding Description}"
-                                        Width="2*"/>
+                    <fa:ImageAwesome Icon="List"
+                                     Width="16"
+                                     Height="16"
+                                     Foreground="#111827"
+                                     Margin="0,0,8,0"/>
 
-                    <DataGridTextColumn Header="Statut"
-                                        Binding="{Binding Statut}"
-                                        Width="120"/>
+                    <TextBlock Text="Liste des postes"
+                               FontSize="18"
+                               FontWeight="SemiBold"
+                               Foreground="#111827"/>
+                </StackPanel>
 
-                </DataGrid.Columns>
+                <!-- DATAGRID -->
+                <DataGrid Grid.Row="1"
+                          x:Name="dgPostes"
+                          AutoGenerateColumns="False"
+                          IsReadOnly="True"
+                          GridLinesVisibility="None"
+                          HeadersVisibility="Column"
+                          RowHeight="42"
+                          Background="White">
 
-            </DataGrid>
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#F3F4F6"/>
+                            <Setter Property="Foreground" Value="#111827"/>
+                            <Setter Property="FontWeight" Value="SemiBold"/>
+                            <Setter Property="Height" Value="42"/>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Header="ID"
+                                            Binding="{Binding IdPoste}"
+                                            Width="70"/>
+
+                        <DataGridTextColumn Header="Nom"
+                                            Binding="{Binding NomPoste}"
+                                            Width="*"/>
+
+                        <DataGridTextColumn Header="Description"
+                                            Binding="{Binding Description}"
+                                            Width="2*"/>
+
+                        <DataGridTextColumn Header="Statut"
+                                            Binding="{Binding Statut}"
+                                            Width="140"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+            </Grid>
 
         </Border>
 

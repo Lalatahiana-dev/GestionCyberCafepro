@@ -3,7 +3,6 @@ using Gestion_CyberCafe.ModelsR;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Entity.Core.Mapping;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -13,74 +12,76 @@ namespace Gestion_CyberCafe.Views.Abonnement.Pages
     public partial class AbonnementActiveView : UserControl
     {
         private readonly GestionCyberContext _context;
-
         private List<AbonnementInternet> _abonnements;
 
         public AbonnementActiveView()
         {
             InitializeComponent();
-
             _context = new GestionCyberContext();
-
             LoadAbonnements();
         }
 
         // ================= LOAD =================
-
         private void LoadAbonnements()
         {
-            // ✔ STEP 1: check expiration
             CheckExpiration();
 
             _abonnements = _context.AbonnementInternets
                 .Include(a => a.Client)
-                .Where(a =>
-                    !a.IsDeleted &&
-                    a.Statut == "ACTIVE")
+                .Where(a => !a.IsDeleted && a.Statut == "ACTIVE")
                 .OrderByDescending(a => a.DateDebut)
                 .ToList();
 
             dgAbonnements.ItemsSource = _abonnements;
-
             txtTotal.Text = $"{_abonnements.Count} abonnement(s)";
         }
 
         // ================= RECHERCHE =================
+        private void BtnRechercher_Click(object sender, RoutedEventArgs e)
+        {
+            ApplySearch();
+        }
 
         private void TxtRecherche_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string recherche = txtRecherche.Text.ToLower();
+            // optional live search (si tianao instantané)
+            // ApplySearch();
+        }
+
+        private void ApplySearch()
+        {
+            if (_abonnements == null) return;
+
+            string recherche = (txtRecherche.Text ?? "").ToLower().Trim();
 
             var resultat = _abonnements.Where(a =>
                 a.Client != null &&
                 (
-                    a.Client.Nom.ToLower().Contains(recherche)
-                    ||
-                    a.Client.Prenom.ToLower().Contains(recherche)
-                    ||
-                    a.Client.Telephone.ToLower().Contains(recherche)
+                    (a.Client.Nom ?? "").ToLower().Contains(recherche) ||
+                    (a.Client.Prenom ?? "").ToLower().Contains(recherche) ||
+                    (a.Client.Telephone ?? "").ToLower().Contains(recherche) ||
+                    (a.TypeForfait ?? "").ToLower().Contains(recherche)
                 ))
                 .ToList();
 
             dgAbonnements.ItemsSource = resultat;
-
             txtTotal.Text = $"{resultat.Count} abonnement(s)";
         }
 
         // ================= ACTUALISER =================
-
         private void BtnRefresh_Click(object sender, RoutedEventArgs e)
         {
             txtRecherche.Text = "";
-
             LoadAbonnements();
         }
 
+        // ================= HELPERS =================
         private AbonnementInternet GetSelectedAbonnement(object sender)
         {
             return (sender as FrameworkElement)?.DataContext as AbonnementInternet;
         }
-        //Voir details
+
+        // ================= VOIR =================
         private void BtnVoir_Click(object sender, RoutedEventArgs e)
         {
             var item = GetSelectedAbonnement(sender);
@@ -88,19 +89,21 @@ namespace Gestion_CyberCafe.Views.Abonnement.Pages
 
             MessageBox.Show(
                 $"Client: {item.Client?.Nom} {item.Client?.Prenom}\n" +
+                $"Téléphone: {item.Client?.Telephone}\n" +
                 $"Accès: {item.TypeAcces}\n" +
                 $"Forfait: {item.TypeForfait}\n" +
+                $"Appareils: {item.NombreAppareils}\n" +
                 $"Montant: {item.Montant} Ar\n" +
-                $"Expiration: {item.DateExpiration}"
+                $"Début: {item.DateDebut}\n" +
+                $"Expiration: {item.DateExpiration}\n" +
+                $"Statut: {item.Statut}"
             );
         }
 
-        //Modification
+        // ================= MODIFIER =================
         private void BtnModifier_Click(object sender, RoutedEventArgs e)
         {
-            var abonnement =
-                (sender as FrameworkElement)?.DataContext
-                as AbonnementInternet;
+            var abonnement = GetSelectedAbonnement(sender);
 
             if (abonnement == null)
             {
@@ -114,24 +117,14 @@ namespace Gestion_CyberCafe.Views.Abonnement.Pages
             LoadAbonnements();
         }
 
-        //Suspendre
+        // ================= SUSPENDRE (FIXED) =================
         private void BtnSuspendre_Click(object sender, RoutedEventArgs e)
         {
-            var abonnement =
-                (sender as FrameworkElement)?.DataContext
-                as AbonnementInternet;
+            var abonnement = GetSelectedAbonnement(sender);
+            if (abonnement == null) return;
 
-            if (abonnement == null)
-                return;
-            // Vérifie statut
-            if (abonnement.Statut != "SUSPENDU")
-            {
-                MessageBox.Show(
-                    "Seuls les abonnements suspendus peuvent être réactivés.");
-                return;
-            }
             var result = MessageBox.Show(
-                "Suspendre cet abonnement ?",
+                "Voulez-vous suspendre cet abonnement ?",
                 "Confirmation",
                 MessageBoxButton.YesNo,
                 MessageBoxImage.Question);
@@ -143,16 +136,12 @@ namespace Gestion_CyberCafe.Views.Abonnement.Pages
 
             _context.SaveChanges();
 
-            MessageBox.Show(
-                "Abonnement suspendu avec succès.",
-                "Succès",
-                MessageBoxButton.OK,
-                MessageBoxImage.Information);
+            MessageBox.Show("Abonnement suspendu ✔");
 
             LoadAbonnements();
         }
 
-        //Suppression
+        // ================= DELETE =================
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
             var item = GetSelectedAbonnement(sender);
@@ -162,13 +151,12 @@ namespace Gestion_CyberCafe.Views.Abonnement.Pages
                 MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 item.IsDeleted = true;
-
                 _context.SaveChanges();
-
                 LoadAbonnements();
             }
         }
-        // Expire automatique
+
+        // ================= EXPIRATION AUTO =================
         private void CheckExpiration()
         {
             var abonnements = _context.AbonnementInternets
@@ -189,17 +177,13 @@ namespace Gestion_CyberCafe.Views.Abonnement.Pages
             if (updated)
                 _context.SaveChanges();
         }
-        // Renouvellement 
+
+        // ================= RENOUVELER =================
         private void BtnRenouveler_Click(object sender, RoutedEventArgs e)
         {
-            var abonnement =
-                (sender as FrameworkElement)?.DataContext
-                as AbonnementInternet;
+            var abonnement = GetSelectedAbonnement(sender);
+            if (abonnement == null) return;
 
-            if (abonnement == null)
-                return;
-
-            // ✔ confirmation
             var result = MessageBox.Show(
                 "Renouveler cet abonnement ?",
                 "Confirmation",
@@ -210,8 +194,6 @@ namespace Gestion_CyberCafe.Views.Abonnement.Pages
                 return;
 
             DateTime debut = DateTime.Now;
-
-            // ✔ calcul base forfait
             decimal prixBase = 0;
 
             switch (abonnement.TypeForfait)
@@ -247,13 +229,9 @@ namespace Gestion_CyberCafe.Views.Abonnement.Pages
                     break;
             }
 
-            // ✔ recalcul montant
             abonnement.Montant = prixBase * abonnement.NombreAppareils;
-
-            // ✔ reactivate
-            abonnement.Statut = "ACTIVE";
-
             abonnement.DateDebut = debut;
+            abonnement.Statut = "ACTIVE";
 
             _context.SaveChanges();
 
@@ -262,15 +240,15 @@ namespace Gestion_CyberCafe.Views.Abonnement.Pages
             LoadAbonnements();
         }
 
+        // ================= OPTIONAL UI =================
         private void dgAbonnements_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var selected = dgAbonnements.SelectedItem as AbonnementInternet;
 
-            if (selected == null)
-                return;
-
-            // Exemple: affichage simple
-            txtRecherche.Text = selected.Client?.Nom;
+            if (selected != null && !string.IsNullOrEmpty(selected.Client?.Nom))
+            {
+                txtRecherche.Text = selected.Client.Nom;
+            }
         }
     }
 }
